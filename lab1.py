@@ -45,6 +45,7 @@ import string
 import sys
 
 def parse_csv(filename):
+
     """Parse a CSV file by separating it into headers and additional data.
 
     Parameters
@@ -65,6 +66,7 @@ def parse_csv(filename):
            file "1, 2, 3," and "4, 5, 6" then this list would look like
            [[1, 2, 3], [4, 5, 6]].
     """
+
     inFile = open(filename)
     csvFile = csv.reader(inFile)
 
@@ -82,6 +84,23 @@ def parse_csv(filename):
     return csvHeader, csvData
 
 def build_and_display_xml(list1, list2):
+
+    """Building and displaying XML file derived from a CSV file
+
+    Parameters
+    ----------
+    list1, list2
+        list1 is the first row of the CSV file represented as a list
+        list2 is rows 2 through n of the CSV file represented as a list of list
+    Returns
+    -------
+    (Nothing)
+
+    Output
+    ------
+    Sends data to sys.stdout.write
+
+    """
 
     # Hard coded values that are allowed per lecture on 2/2/2017
 
@@ -118,6 +137,23 @@ def build_and_display_xml(list1, list2):
     return
 
 def build_and_display_json(list1, list2):
+
+    """Building and displaying JSON file derived from a CSV file
+
+    Parameters
+    ----------
+    list1, list2
+        list1 is the first row of the CSV file represented as a list
+        list2 is rows 2 through n of the CSV file represented as a list of list
+    Returns
+    -------
+    (Nothing)
+
+    Output
+    ------
+    Sends data to sys.stdout.write
+
+    """
 
     # Hard coded values that are allowed per lecture on 2/2/2017
 
@@ -189,6 +225,7 @@ def json_to_xml(jsonFileText):
 # main
 
 if __name__ == "__main__":
+    
     # Parse command line arguments to convert CSV to either XML or JSON.
 
     validConversionFlag = False
