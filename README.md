@@ -1,1 +1,3 @@
-My Lab1\n
+Christian Turner
+HS 611
+Lab Assignment:  lab1
