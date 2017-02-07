@@ -182,7 +182,7 @@ def json_to_xml(jsonFileText):
     jsonData = json.loads(jsonFileText)
 
 
-    print
+    print jsonData
 
     return
 
