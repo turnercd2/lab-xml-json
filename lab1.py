@@ -43,6 +43,7 @@ import xml
 import json
 import string
 import sys
+import xml.etree.ElementTree as ET
 
 def parse_csv(filename):
 
@@ -207,6 +208,22 @@ def build_and_display_json(list1, list2):
 
 def readin_json(filename):
 
+    """Reading in JSON file from the command line
+
+    Parameters
+    ----------
+    filename
+        filename - this is the name of the json ASCII file
+    Returns
+    -------
+        Returns string of json file
+
+    Output
+    ------
+        None
+
+    """
+
     jsonFile = open(filename, "r")
 
     jsonFileText = jsonFile.read()
@@ -215,17 +232,39 @@ def readin_json(filename):
 
 def json_to_xml(jsonFileText):
 
+    """In memory conversion of JSON to XML
+
+    Parameters
+    ----------
+    jsonFileText
+        jsonFileText- string representation of JSON file
+    Returns
+    -------
+        Nothing
+
+    Output
+    ------
+        XML tree
+
+    """
+
     jsonData = json.loads(jsonFileText)
+    jsonDataL = list(jsonData)
 
+    xmlData = ET.ElementTree(jsonDataL)
 
-    print jsonData
+    print xmlData
+
+    #sys.stdout.write(xmlData)
+
+    print "Not yet implemented"
 
     return
 
 # main
 
 if __name__ == "__main__":
-    
+
     # Parse command line arguments to convert CSV to either XML or JSON.
 
     validConversionFlag = False
